@@ -1,0 +1,42 @@
+Start testing: Oct 06 19:37 CEST
+----------------------------------------------------------
+1/1 Testing: AllTestsAllocator
+1/1 Test: AllTestsAllocator
+Command: "/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/alloctest"
+Directory: /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build
+"AllTestsAllocator" start time: Oct 06 19:37 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 3 tests from Variantes
+[ RUN      ] Variantes.bf
+[       OK ] Variantes.bf (0 ms)
+[ RUN      ] Variantes.cff
+[       OK ] Variantes.cff (0 ms)
+[ RUN      ] Variantes.buddy
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_buddy.cc:28: Failure
+Expected: (m1) != ((void *)0), actual: NULL vs NULL
+[  FAILED  ] Variantes.buddy (0 ms)
+[----------] 3 tests from Variantes (1 ms total)
+
+[----------] 3 tests from Init
+[ RUN      ] Init.noinit
+[       OK ] Init.noinit (0 ms)
+[ RUN      ] Init.initdestroy
+[       OK ] Init.initdestroy (0 ms)
+[ RUN      ] Init.oneallocloop
+[       OK ] Init.oneallocloop (3 ms)
+[----------] 3 tests from Init (4 ms total)
+
+[----------] 7 tests from BaseMemTest
+[ RUN      ] BaseMemTest.allocnone
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Failed.
+"AllTestsAllocator" end time: Oct 06 19:37 CEST
+"AllTestsAllocator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 06 19:37 CEST

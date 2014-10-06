@@ -1,0 +1,6 @@
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/CMakeFiles/allocphy.dir
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/CMakeFiles/alloctest.dir
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/CMakeFiles/check.dir
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/gtest/CMakeFiles/gtest.dir
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/gtest/CMakeFiles/gtest_main.dir
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/CMakeFiles/memshell.dir
