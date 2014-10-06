@@ -95,9 +95,12 @@ void * mem_alloc(unsigned long size)
 int mem_free(void *ptr, unsigned long size)
 {
 	/*
+	  D'abord on ajoute la zone à la TZR (utiliser get_size_id() )
+
 	  On boucle de k à "max".
 	     à chaque itération on regarde si on peut fusionner le block courant avec son buddy (si le buddy est libre)
-	     puis l'élément courant devient le block de taille 2^(k+1) qui vient d'être fusionné, et ainsi de suite. 
+	     Si oui, on enlève les deux zones libres de la TZR, et on ajoute la nouvelle.
+	     Enfin, l'élément courant devient le block de taille 2^(k+1) qui vient d'être fusionné, et ainsi de suite. 
 	  
 	  NOTE : l'adresse du budy = addr block XOR size; 
 	  ex: 100 ^ 10 = 110
