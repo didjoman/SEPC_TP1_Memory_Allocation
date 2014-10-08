@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <assert.h>
 #include "mem.h"
 
@@ -101,6 +102,10 @@ long int* min(long int* addr1, long int* addr2){
 	return ((long int)addr1 > (long int)addr2) ? addr2 : addr1;
 }
 
+static long int* get_buddy(long int* addr, unsigned long size){
+        return (long int *)(((((long int)addr) ^ size)));
+}
+
 int mem_free(void *ptr, unsigned long size)
 {
 	// /!\ ATTENTION /!\ J'ai tout juste commencé ce code, tu peux le continuer ou
@@ -135,13 +140,13 @@ int mem_free(void *ptr, unsigned long size)
 		// recherche du buddy dans la liste des zones de taille 2^id
 		long int* buddy_pred = NULL;
 		long int* buddy = tzl_array[i];
-		while(buddy && (long int *)((int)area_to_free ^ size_allocated) != buddy){
+		while(buddy && get_buddy(area_to_free, size_allocated) != buddy){
 			buddy_pred = buddy;
 			buddy = (long int*)*buddy;
 		}
 		
 		// Si le buddy est libre (= on l'a trouvé) on fusionne les zones
-		if((long int *)((int)area_to_free ^ size_allocated) == buddy){   		
+		if(get_buddy(area_to_free, size_allocated) == buddy){   		
 			// remove de la zone à libérer de la TZL :
 			// invariant: area_to_free est toujours en tête de la liste tzl[i]
 			tzl_array[i] = (long int*)*(long int*)area_to_free;//(long int*)*tzl_array[i];
