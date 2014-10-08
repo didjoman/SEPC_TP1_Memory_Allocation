@@ -1,10 +1,10 @@
-Start testing: Oct 06 19:37 CEST
+Start testing: Oct 08 20:35 CEST
 ----------------------------------------------------------
 1/1 Testing: AllTestsAllocator
 1/1 Test: AllTestsAllocator
 Command: "/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/alloctest"
 Directory: /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build
-"AllTestsAllocator" start time: Oct 06 19:37 CEST
+"AllTestsAllocator" start time: Oct 08 20:35 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 13 tests from 3 test cases.
@@ -15,14 +15,19 @@ Output:
 [ RUN      ] Variantes.cff
 [       OK ] Variantes.cff (0 ms)
 [ RUN      ] Variantes.buddy
-/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_buddy.cc:28: Failure
-Expected: (m1) != ((void *)0), actual: NULL vs NULL
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_buddy.cc:44: Failure
+Expected: (mref) != ((void *)0), actual: NULL vs NULL
 [  FAILED  ] Variantes.buddy (0 ms)
-[----------] 3 tests from Variantes (1 ms total)
+[----------] 3 tests from Variantes (0 ms total)
 
 [----------] 3 tests from Init
 [ RUN      ] Init.noinit
-[       OK ] Init.noinit (0 ms)
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc:17: Failure
+Value of: (void *)0
+  Actual: NULL
+Expected: mem_alloc(64)
+Which is: 0x40365008
+[  FAILED  ] Init.noinit (0 ms)
 [ RUN      ] Init.initdestroy
 [       OK ] Init.initdestroy (0 ms)
 [ RUN      ] Init.oneallocloop
@@ -31,12 +36,44 @@ Expected: (m1) != ((void *)0), actual: NULL vs NULL
 
 [----------] 7 tests from BaseMemTest
 [ RUN      ] BaseMemTest.allocnone
+[       OK ] BaseMemTest.allocnone (0 ms)
+[ RUN      ] BaseMemTest.allocall
+[       OK ] BaseMemTest.allocall (2 ms)
+[ RUN      ] BaseMemTest.boundaries
+[       OK ] BaseMemTest.boundaries (0 ms)
+[ RUN      ] BaseMemTest.intervals
+[       OK ] BaseMemTest.intervals (1 ms)
+[ RUN      ] BaseMemTest.bouclefreepairimpair
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc:122: Failure
+Expected: (m1) != ((void *)0), actual: NULL vs NULL
+[  FAILED  ] BaseMemTest.bouclefreepairimpair (1 ms)
+[ RUN      ] BaseMemTest.petitetaille
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc:164: Failure
+Expected: (m3) != ((void *)0), actual: NULL vs NULL
+[  FAILED  ] BaseMemTest.petitetaille (0 ms)
+[ RUN      ] BaseMemTest.aleatoire
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc:179: Failure
+Expected: (m1) != ((void *)0), actual: NULL vs NULL
+[  FAILED  ] BaseMemTest.aleatoire (1 ms)
+[----------] 7 tests from BaseMemTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (10 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] Variantes.buddy
+[  FAILED  ] Init.noinit
+[  FAILED  ] BaseMemTest.bouclefreepairimpair
+[  FAILED  ] BaseMemTest.petitetaille
+[  FAILED  ] BaseMemTest.aleatoire
+
+ 5 FAILED TESTS
 <end of output>
-Test time =   0.17 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Failed.
-"AllTestsAllocator" end time: Oct 06 19:37 CEST
+"AllTestsAllocator" end time: Oct 08 20:35 CEST
 "AllTestsAllocator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 06 19:37 CEST
+End testing: Oct 08 20:35 CEST
