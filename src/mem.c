@@ -51,7 +51,7 @@ static int get_size_id(unsigned long size){
 
 void * mem_alloc(unsigned long size)
 {
-	if(!is_init || size <= 0 || size > ALLOC_MEM_SIZE)
+	if(!zone_memoire || size <= 0 || size > ALLOC_MEM_SIZE)
 		return NULL;
 
 	long int* tmp;
@@ -91,6 +91,7 @@ void * mem_alloc(unsigned long size)
 	tmp = tzl_array[wanted_size_id];
 	tzl_array[wanted_size_id] = (long int*)*tzl_array[wanted_size_id];
 	return tmp;
+
 }
 
 long int* min(long int* addr1, long int* addr2){
