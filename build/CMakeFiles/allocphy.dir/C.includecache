@@ -11,6 +11,8 @@ stdio.h
 -
 stdlib.h
 -
+stdbool.h
+-
 assert.h
 -
 mem.h

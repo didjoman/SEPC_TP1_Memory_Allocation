@@ -14,8 +14,6 @@
 
 void *zone_memoire = 0;
 long int *tzl_array[BUDDY_MAX_INDEX]; 
-char is_init = 0;
-/* ecrire votre code ici */
 
 int mem_init()
 {
@@ -30,19 +28,17 @@ int mem_init()
 	 * Au départ, la case de rang max contient la zone mémoire.
 	 * Toutes les autres cases sont vides (pointeur NULL) 
 	 */
-	//tzl_array = (long int**)zone_memoire;
-
 	for(int i=0; i < BUDDY_MAX_INDEX; ++i)
 		tzl_array[i] = NULL;
 	
 	tzl_array[BUDDY_MAX_INDEX] = zone_memoire;
-	
-	//*tzl_array[BUDDY_MAX_INDEX] = (long int)NULL;
-	is_init = 1;
 
 	return 0;
 }
 
+/*
+  Retourne: log2(size) ou la taille minimale allouable (= taille d'un pointeur)
+*/
 static int get_size_id(unsigned long size){
 	if(size < sizeof(void*))
 		size = sizeof(void*);
@@ -95,7 +91,6 @@ void * mem_alloc(unsigned long size)
 	tmp = tzl_array[wanted_size_id];
 	tzl_array[wanted_size_id] = (long int*)*tzl_array[wanted_size_id];
 	return tmp;
-	//*/ return (void*) 4; (void) get_size_id(0);
 }
 
 long int* min(long int* addr1, long int* addr2){
@@ -103,26 +98,19 @@ long int* min(long int* addr1, long int* addr2){
 }
 
 static long int* get_buddy(long int* addr, unsigned long size){
-        return (long int *)(((((long int)addr) ^ size)));
+        return (long int *)(((((long int)addr - (long int)zone_memoire) ^ size)) + (long int)zone_memoire);
+	/*
+	  TODO : supprimer ça.
+	  NOTE : I had a HUGE problem with the XOR : 
+	  I think the XOR technic only works with addr from 0 (I did not know that -_-' ...
+	  e.g. I allocated blocks of size 2^2 : 0x...08 and 0x...0C
+	       Then I deallocated them. And guess what ? 
+	       0x...08 XOR 8 = 0 , not 0x10 s it should in my example.
+	 */
 }
 
 int mem_free(void *ptr, unsigned long size)
 {
-	// /!\ ATTENTION /!\ J'ai tout juste commencé ce code, tu peux le continuer ou
-	//  le jeter et en faire un autre, comme tu veux.
-
-	/*
-	  D'abord on ajoute la zone à la TZR (utiliser get_size_id() )
-
-	  On boucle de k à "max".
-	  à chaque itération on regarde si on peut fusionner le block courant avec son buddy (si le buddy est libre)
-	  Si oui, on enlève les deux zones libres de la TZR, et on ajoute la nouvelle.
-	  Enfin, l'élément courant devient le block de taille 2^(k+1) qui vient d'être fusionné, et ainsi de suite. 
-	  
-	  NOTE : l'adresse du budy = addr block XOR size; 
-	  ex: 100 ^ 10 = 110
-	*/
-
 	// Vérif de la validité des paramètres : 
 	if(size < 0 || size > ALLOC_MEM_SIZE || 
 	   ptr < zone_memoire || ptr > zone_memoire + ALLOC_MEM_SIZE)
@@ -136,6 +124,7 @@ int mem_free(void *ptr, unsigned long size)
 	tzl_array[id] = (long int*)area_to_free;
 	*(tzl_array[id]) = (long int)tmp;
 
+	// Tentative de récupération de la mémoire (fusino de buddys) :
 	for(int i = id; i < BUDDY_MAX_INDEX; ++i){
 		// recherche du buddy dans la liste des zones de taille 2^id
 		long int* buddy_pred = NULL;
@@ -149,7 +138,7 @@ int mem_free(void *ptr, unsigned long size)
 		if(get_buddy(area_to_free, size_allocated) == buddy){   		
 			// remove de la zone à libérer de la TZL :
 			// invariant: area_to_free est toujours en tête de la liste tzl[i]
-			tzl_array[i] = (long int*)*(long int*)area_to_free;//(long int*)*tzl_array[i];
+			tzl_array[i] = (long int*)*(long int*)area_to_free;
 			// remove du buddy de la TZL : 
 			if(buddy_pred == NULL || buddy_pred == area_to_free)
 				tzl_array[i] = (long int*)*buddy;
@@ -175,7 +164,6 @@ int mem_destroy()
 	/* ecrire votre code ici */
 	for(int i=0; i < BUDDY_MAX_INDEX; ++i)
 		tzl_array[i] = NULL;
-	is_init = 0;
 
 	free(zone_memoire);
 	zone_memoire = 0;
