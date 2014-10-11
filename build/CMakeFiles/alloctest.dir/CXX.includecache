@@ -12,9 +12,23 @@ variante.h
 
 /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/../src/variante.h
 
-/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_buddy.cc
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc
+sys/time.h
+-
+sys/resource.h
+-
 gtest/gtest.h
 -
 ../src/mem.h
 /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/../src/mem.h
+test_run_cpp.h
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_run_cpp.h
+test_generic.h
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.h
+
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.h
+
+/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_run_cpp.h
+stdbool.h
+-
 

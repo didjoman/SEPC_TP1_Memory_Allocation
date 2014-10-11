@@ -1,3 +1,2 @@
-AllTestsAllocator 0 0
+AllTestsAllocator 6 0.00357134
 ---
-AllTestsAllocator

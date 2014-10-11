@@ -1,10 +1,10 @@
-Start testing: Oct 11 17:52 CEST
+Start testing: Oct 11 22:02 CEST
 ----------------------------------------------------------
 1/1 Testing: AllTestsAllocator
 1/1 Test: AllTestsAllocator
 Command: "/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/alloctest"
 Directory: /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build
-"AllTestsAllocator" start time: Oct 11 17:52 CEST
+"AllTestsAllocator" start time: Oct 11 22:02 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 13 tests from 3 test cases.
@@ -24,8 +24,8 @@ Output:
 [ RUN      ] Init.initdestroy
 [       OK ] Init.initdestroy (0 ms)
 [ RUN      ] Init.oneallocloop
-[       OK ] Init.oneallocloop (4 ms)
-[----------] 3 tests from Init (4 ms total)
+[       OK ] Init.oneallocloop (3 ms)
+[----------] 3 tests from Init (3 ms total)
 
 [----------] 7 tests from BaseMemTest
 [ RUN      ] BaseMemTest.allocnone
@@ -41,24 +41,18 @@ Output:
 [ RUN      ] BaseMemTest.petitetaille
 [       OK ] BaseMemTest.petitetaille (1 ms)
 [ RUN      ] BaseMemTest.aleatoire
-/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/tests/test_generic.cc:179: Failure
-Expected: (m1) != ((void *)0), actual: NULL vs NULL
-[  FAILED  ] BaseMemTest.aleatoire (1 ms)
-[----------] 7 tests from BaseMemTest (5 ms total)
+[       OK ] BaseMemTest.aleatoire (5 ms)
+[----------] 7 tests from BaseMemTest (11 ms total)
 
 [----------] Global test environment tear-down
-[==========] 13 tests from 3 test cases ran. (11 ms total)
-[  PASSED  ] 12 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] BaseMemTest.aleatoire
-
- 1 FAILED TEST
+[==========] 13 tests from 3 test cases ran. (17 ms total)
+[  PASSED  ] 13 tests.
 <end of output>
-Test time =   0.51 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
-Test Failed.
-"AllTestsAllocator" end time: Oct 11 17:52 CEST
+Test Passed.
+"AllTestsAllocator" end time: Oct 11 22:02 CEST
 "AllTestsAllocator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 11 17:52 CEST
+End testing: Oct 11 22:02 CEST

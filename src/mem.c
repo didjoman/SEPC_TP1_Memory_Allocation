@@ -40,12 +40,16 @@ int mem_init()
   Retourne: log2(size) ou la taille minimale allouable (= taille d'un pointeur)
 */
 static int get_size_id(unsigned long size){
-	if(size < sizeof(void*))
-		size = sizeof(void*);
+	if(size < 8*sizeof(void*))
+		size = 8*sizeof(void*);
 
 	for(int i = 0; i <= 20; ++i)
-		if(size >> i <= 1)
-			return i;
+		if((size >> i) <= 1){
+			if(((size >> i) == 1) && ((size ^ (1<<i)) == 0))
+				return i;  // ex: 32 demandé = 1000 (reste 1) on donne 32
+			else
+				return i+1; // ex: 33 demandé, (reste 0) on donne 64
+		}
 	return 0;
 }
 
