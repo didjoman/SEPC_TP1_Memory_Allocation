@@ -12,7 +12,7 @@
 
 /** squelette du TP allocateur memoire */
 void *zone_memoire = 0;
-long int *tzl_array[BUDDY_MAX_INDEX]; 
+long int *tzl_array[BUDDY_MAX_INDEX+1]; 
 
 static long int* min(long int* addr1, long int* addr2);
 static long int* get_buddy(long int* addr, unsigned long size);
