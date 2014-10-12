@@ -91,9 +91,9 @@ clean: CMakeFiles/allocphy.dir/clean
 # Target rules for target CMakeFiles/alloctest.dir
 
 # All Build rule for target.
-CMakeFiles/alloctest.dir/all: CMakeFiles/allocphy.dir/all
 CMakeFiles/alloctest.dir/all: gtest/CMakeFiles/gtest.dir/all
 CMakeFiles/alloctest.dir/all: gtest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/alloctest.dir/all: CMakeFiles/allocphy.dir/all
 	$(MAKE) -f CMakeFiles/alloctest.dir/build.make CMakeFiles/alloctest.dir/depend
 	$(MAKE) -f CMakeFiles/alloctest.dir/build.make CMakeFiles/alloctest.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/CMakeFiles  2 3 4 5 6 7

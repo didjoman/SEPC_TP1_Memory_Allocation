@@ -1,10 +1,10 @@
-Start testing: Oct 12 00:18 CEST
+Start testing: Oct 12 12:08 CEST
 ----------------------------------------------------------
 1/1 Testing: AllTestsAllocator
 1/1 Test: AllTestsAllocator
 Command: "/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build/alloctest"
 Directory: /home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build
-"AllTestsAllocator" start time: Oct 12 00:18 CEST
+"AllTestsAllocator" start time: Oct 12 12:08 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 13 tests from 3 test cases.
@@ -16,7 +16,7 @@ Output:
 [       OK ] Variantes.cff (0 ms)
 [ RUN      ] Variantes.buddy
 [       OK ] Variantes.buddy (2 ms)
-[----------] 3 tests from Variantes (2 ms total)
+[----------] 3 tests from Variantes (3 ms total)
 
 [----------] 3 tests from Init
 [ RUN      ] Init.noinit
@@ -24,8 +24,8 @@ Output:
 [ RUN      ] Init.initdestroy
 [       OK ] Init.initdestroy (0 ms)
 [ RUN      ] Init.oneallocloop
-[       OK ] Init.oneallocloop (4 ms)
-[----------] 3 tests from Init (4 ms total)
+[       OK ] Init.oneallocloop (3 ms)
+[----------] 3 tests from Init (3 ms total)
 
 [----------] 7 tests from BaseMemTest
 [ RUN      ] BaseMemTest.allocnone
@@ -35,24 +35,24 @@ Output:
 [ RUN      ] BaseMemTest.boundaries
 [       OK ] BaseMemTest.boundaries (0 ms)
 [ RUN      ] BaseMemTest.intervals
-[       OK ] BaseMemTest.intervals (1 ms)
+[       OK ] BaseMemTest.intervals (10 ms)
 [ RUN      ] BaseMemTest.bouclefreepairimpair
 [       OK ] BaseMemTest.bouclefreepairimpair (1 ms)
 [ RUN      ] BaseMemTest.petitetaille
 [       OK ] BaseMemTest.petitetaille (1 ms)
 [ RUN      ] BaseMemTest.aleatoire
-[       OK ] BaseMemTest.aleatoire (6 ms)
-[----------] 7 tests from BaseMemTest (11 ms total)
+[       OK ] BaseMemTest.aleatoire (7 ms)
+[----------] 7 tests from BaseMemTest (21 ms total)
 
 [----------] Global test environment tear-down
-[==========] 13 tests from 3 test cases ran. (17 ms total)
+[==========] 13 tests from 3 test cases ran. (28 ms total)
 [  PASSED  ] 13 tests.
 <end of output>
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"AllTestsAllocator" end time: Oct 12 00:18 CEST
+"AllTestsAllocator" end time: Oct 12 12:08 CEST
 "AllTestsAllocator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 12 00:18 CEST
+End testing: Oct 12 12:08 CEST

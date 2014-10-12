@@ -33,10 +33,10 @@ int mem_init()
 	 * Au départ, la case de rang max contient la zone mémoire.
 	 * Toutes les autres cases sont vides (pointeur NULL) 
 	 */
-	for(int i=0; i < BUDDY_MAX_INDEX; ++i)
-		tzl_array[i] = NULL;
-	
-	tzl_array[BUDDY_MAX_INDEX] = zone_memoire;
+        for(int i=0; i <= BUDDY_MAX_INDEX; ++i)
+                tzl_array[i] = NULL;
+
+        ls_add_in_head(&tzl_array[BUDDY_MAX_INDEX], zone_memoire);
 
 	return 0;
 }
