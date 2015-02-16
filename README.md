@@ -15,8 +15,32 @@ A modified version of this algorithm is also used in the Linux Kernel.
 
 Usage
 ----------
+In order to test the memory allocator implemented, we can use the provided shell (memshell), launch the command "alloc <size>" and then observe the data structure in gdb : 
 
-> `cd ensimag-allocateur`
+
+> `cd SEPC_TP1_Memory_Allocation`
+
+> `cd build`
+
+> `gdb ./memshell`
+
+> `break`
+
+> `mem_alloc`
+
+> `layout`
+
+> `run`
+
+> `alloc 64`
+
+> `print TZL`
+
+
+Tests
+----------
+
+> `cd SEPC_TP1_Memory_Allocation`
 
 > `cd build`
 
@@ -26,3 +50,4 @@ Usage
 
 > `make test`
 
+> `make check`
