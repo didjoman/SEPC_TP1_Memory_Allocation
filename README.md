@@ -1,22 +1,19 @@
-ensimag-allocateur
+ensimag-allocator
 ==================
 
-Squelette et sujet pour un TP d'allocateur mémoire physique
+These files implement a memory-allocator.
+This project was an assignment for the course of "Operating System & Concurrent computing" at Ensimag ("Système d'Exploitation et Programmation Concurrente" in french).
 
-Tous les fichiers sont couverts par la licence GPLv3+
+All the files are covered by the licence GPLV3+
 
 Introduction
 ----------
 
-Ces fichiers servent de base à un TP sur les allocateurs mémoires
-physiques. En plus du coté système, ce TP permet également de réviser
-l'utilisation de l'arithmétique des pointeurs en C.
+The goal of the course was to explore different ways to implement a physical memory allocation.
+In this assignment, we implemented the Buddy algorithm (see http://en.wikipedia.org/wiki/Buddy_memory_allocation).
+A modified version of this algorithm is also used in the Linux Kernel.
 
-Spécificités de ce squelette:
-- plusieurs variantes (choix par sha512sum sur les logins des étudiants)
-- jeux de tests fournis aux étudiants (Google Test)
-
-Utilisation
+Usage
 ----------
 
 > `cd ensimag-allocateur`
@@ -28,6 +25,4 @@ Utilisation
 > `make`
 
 > `make test`
-
-
 
