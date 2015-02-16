@@ -1,1 +1,0 @@
-/usr/bin/cc  -g -Wall -Werror -std=gnu99    CMakeFiles/memshell.dir/src/memshell.c.o  -o memshell -rdynamic liballocphy.so -Wl,-rpath,/home/alexandre/documents/cours/2A/SEPC/sepc_tp1/build 
