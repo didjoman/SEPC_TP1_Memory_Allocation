@@ -15,7 +15,7 @@ A modified version of this algorithm is also used in the Linux Kernel.
 
 Usage
 ----------
-In order to test the memory allocator implemented, we can use the provided shell (memshell), launch the command "alloc <size>" and then observe the data structure in gdb : 
+In order to test the memory allocator implemented, we can use the provided shell (memshell), launch the command `alloc <size>` and then observe the data structure in gdb : 
 
 
 > `cd SEPC_TP1_Memory_Allocation`
