@@ -13,9 +13,20 @@ The goal of the course was to explore different ways to implement a physical mem
 In this assignment, we implemented the Buddy algorithm (see http://en.wikipedia.org/wiki/Buddy_memory_allocation).
 A modified version of this algorithm is also used in the Linux Kernel.
 
+How to build the project
+----------
+
+> `cd SEPC_TP1_Memory_Allocation`
+
+> `cd build`
+
+> `cmake ..`
+
+> `make`
+
 Usage
 ----------
-In order to test the memory allocator implemented, we can use the provided shell (memshell), launch the command `alloc <size>` and then observe the data structure in gdb : 
+In order to test the memory allocator implemented, we can use the provided shell (memshell), launch the command `alloc <size>` and then observe the data structure (named TZL) in gdb : 
 
 
 > `cd SEPC_TP1_Memory_Allocation`
@@ -39,14 +50,12 @@ In order to test the memory allocator implemented, we can use the provided shell
 
 Tests
 ----------
+Unit-tests (Google tests) have been provided by the professors to check the validity of the memory allocation.
+In order to launch it : 
 
 > `cd SEPC_TP1_Memory_Allocation`
 
 > `cd build`
-
-> `cmake ..`
-
-> `make`
 
 > `make test`
 
